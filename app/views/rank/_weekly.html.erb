@@ -1,0 +1,36 @@
+
+<table class="table table-hover table-inverse">
+  <thead>
+    <tr>
+       <th></th>
+       <th>Title</th>
+       <th>Opinion</th>
+       <th colspan="4"></th>
+     </tr>
+  </tead>
+  <tbody>
+  <% @ranks.each do |book| %>
+    <tr>
+      <td>
+        <%= link_to user_path(book.user) do %>
+          <%= attachment_image_tag book.user, :profile_image, :fill, 50, 50, fallback: 'no-image.jpg', size:'50x50' %>
+        <% end %>
+      </td>
+      <td><%= link_to book.title, book_path(book) %></td>
+      <td><%= book.body %></td>
+
+      <td>
+        <div id="book_<%= book.id %>">
+         <%= render 'favorites/favorite', book: book %>
+        </div>
+      </td>
+
+      <!--コメント数-->
+      <td>コメント数：<%= book.book_comments.count %></td>
+
+      <!--閲覧数-->
+      <td>閲覧数:<%= book.impressionist_count %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
