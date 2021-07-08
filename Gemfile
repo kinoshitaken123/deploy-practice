@@ -59,6 +59,7 @@ group :test do
   gem 'rspec-rails'
   gem "factory_bot_rails"
   gem 'faker'
+  gem 'pry-byebug'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -74,7 +75,7 @@ gem 'font-awesome-sass', '~> 5.13'
 gem 'bootstrap', '~> 4.1.1'
 
 #一時停止
-gem 'pry-byebug'
+
 #検索機能使用せずに
 gem 'ransack'
 
